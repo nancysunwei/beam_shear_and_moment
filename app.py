@@ -5,7 +5,7 @@ from matplotlib.patches import Rectangle
 
 # --- 1. 页面基本配置 ---
 st.set_page_config(page_title="Beam Analysis Module", layout="wide")
-st.title("Beam Analysis Module（外伸梁结构分析）")
+st.title("Beam Analysis Module（外伸梁内力分析）")
 
 # --- 2. 初始化 Session State (用于保存动态状态) ---
 if 'unit_system' not in st.session_state:
@@ -48,7 +48,7 @@ with col_add:
         st.rerun()
 with col_reset:
     if st.button("🔄 Reset Loads"):
-        st.session_state.num_loads = 3
+        st.session_state.num_loads = 1
         st.rerun()
 
 st.markdown(f"**Positive = Downward**")
