@@ -11,7 +11,7 @@ st.title("Beam Analysis Module（外伸梁内力分析）")
 if 'unit_system' not in st.session_state:
     st.session_state.unit_system = 'SI'
 if 'num_loads' not in st.session_state:
-    st.session_state.num_loads = 3
+    st.session_state.num_loads = 1
 
 # --- 3. 顶部控制栏 & 单位设置 ---
 col_preset1, col_preset2, _ = st.columns([1, 1, 4])
@@ -33,11 +33,11 @@ else:
 # --- 4. 界面：梁属性与支座 ---
 st.subheader("Beam Geometry & Supports")
 col1, col2, col3, col4, col5 = st.columns(5)
-L = col1.number_input(f"Length (L) [{u_len}]", min_value=0.1, value=10.0, step=1.0)
+L = col1.number_input(f"Length (L) [{u_len}]", min_value=0.1, value=36.0, step=1.0)
 E_display = col2.number_input(f"Modulus (E) [{u_E}]", min_value=0.1, value=200.0, step=10.0)
 I_display = col3.number_input(f"Inertia (I) [{u_I}]", min_value=0.1, value=5000.0, step=100.0)
 xA = col4.number_input(f"Support A @ x [{u_len}]", min_value=0.0, max_value=float(L), value=0.0, step=1.0)
-xB = col5.number_input(f"Support B @ x [{u_len}]", min_value=0.0, max_value=float(L), value=10.0, step=1.0)
+xB = col5.number_input(f"Support B @ x [{u_len}]", min_value=0.0, max_value=float(L), value=36.0, step=1.0)
 
 # --- 5. 界面：载荷输入表 ---
 st.subheader("Applied Loads")
@@ -48,7 +48,7 @@ with col_add:
         st.rerun()
 with col_reset:
     if st.button("🔄 Reset Loads"):
-        st.session_state.num_loads = 1
+        st.session_state.num_loads = 3
         st.rerun()
 
 st.markdown(f"**Positive = Downward**")
