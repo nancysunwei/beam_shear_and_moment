@@ -48,7 +48,7 @@ with col_add:
         st.rerun()
 with col_reset:
     if st.button("🔄 Reset Loads"):
-        st.session_state.num_loads = 3
+        st.session_state.num_loads = 1
         st.rerun()
 
 st.markdown(f"**Positive = Downward**")
