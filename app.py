@@ -57,8 +57,8 @@ loads_data = []
 for i in range(st.session_state.num_loads):
     c1, c2, c3 = st.columns(3)
     l_type = c1.selectbox("Type", ["Point Load (↓)", "Distributed Load (↓↓↓)"], key=f"type_{i}")
-    pos = c2.text_input(f"Position x ({u_len})", value="5" if i==0 else "", key=f"pos_{i}", help="For dist load, can use 'start-end' like '0-10'")
-    mag = c3.text_input(f"Magnitude", value="10" if i==0 else "", key=f"mag_{i}")
+    pos = c2.text_input(f"Position x ({u_len})", value="18" if i==0 else "", key=f"pos_{i}", help="For dist load, can use 'start-end' like '0-10'")
+    mag = c3.text_input(f"Magnitude", value="36" if i==0 else "", key=f"mag_{i}")
     loads_data.append((l_type, pos, mag))
 
 st.divider()
